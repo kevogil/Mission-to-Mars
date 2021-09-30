@@ -18,6 +18,7 @@ Visit the Mars Facts webpage and scrape the table containing facts about the pla
 <b>Mars Hemisphere</b><br>
 Visit the Astrogeology site to obtain high res images for each of Mar's hemispheres.
 
+<br>
 
 ### Step 2 : MongoDB and Flask application
 Store all scraped information into a Mongo database and create a new HTML page with Flask that will contain all of the information.
