@@ -12,15 +12,9 @@
       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
       crossorigin="anonymous"
     />
-    <!-- background color -->
-    <style>
-      body {
-        background-color: rgb(255, 172, 19);
-      }
-    </style>
   </head>
 
-<body>
+  <body style="background-color: rgb(255, 172, 19)">
     <!-- container start -->
     <div class="container">
         <div class="jumbotron text-center" style="background-image: url(https://cdn1.edgedatg.com/aws/v2/natgeotv/Mars/showimages/a07a09aa9b0a2ff2b8416d3c9f3ef50a/1200x676-Q75_a07a09aa9b0a2ff2b8416d3c9f3ef50a.jpg); background-size: 100%; height: 400px;">
@@ -43,25 +37,31 @@
         <!-- row containing featured image and mars facts table -->
         <div class="row">
           <!-- featured image -->
-          <div class="col-md-6 text-center">
+          <div class="col col-12 col-md-6 divbody">
             <h2><b>Featured Mars Image</b></h2>
-            <img src="{{mars.featured_image}}">
+            <img src="{{mars.featured_image}}" width="90%">
           </div>
           <!-- mars facts -->
-          <div class="col-md-6 text-center">
+          <div class="col col-12 col-md-6 divbody text-center">
             <h2><b>Mars Facts</b></h2>
-            <div class="col-md-12">{{mars.mars_profile_df | safe}}
-            </div>
+            <p>{{mars.facts|safe}}</p>
           </div>
         </div>
-        <br><br><br><br>
+        <br><br><br><hr><br><br><br>
 
         <!-- mars hemispheres -->
         <div class="row">
           <div class="col text-center">
             <h2><b>Mars Hemispheres</b></h2>
-            <hr>
           </div>
+
+          {% for hemisphere in mars.hemispheres %}
+            <div class="col-md-6 text-center">
+              <h5><b>{{hemisphere.title}}</b></h5>
+              <a href="{{hemisphere.img_url}}"><img src="{{hemisphere.img_url}}" width="75%"></a>
+            </div>
+          {% endfor %}
+
         </div>
 
 

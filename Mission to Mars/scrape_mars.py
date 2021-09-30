@@ -87,7 +87,7 @@ def mars_facts():
     mars_profile_df.columns=['Attribute', 'Value']
     mars_profile_df.set_index('Attribute')
 
-    return mars_profile_df.to_html(classes="table table-striped")
+    return mars_profile_df.to_html(classes="table table-striped", index=False)
 
 
 
@@ -115,7 +115,6 @@ def hemispheres(browser):
         # We have to find the elements on each loop to avoid a stale element exception
         image_href = i.find('a', attrs={'class': 'itemLink product-item'}).get('href')
         image_url = (f"https://astrogeology.usgs.gov{image_href}")
-        hemisphere_dict['img_url'] = image_url
         
         # Visit image_url
         browser.visit(image_url)
@@ -125,6 +124,12 @@ def hemispheres(browser):
         
         # Get Hemisphere title
         hemisphere_dict['title'] = indiv_hemisphere_soup.find('h2', class_='title').text
+
+        # Get Hemisphere image
+        hemisphere_dict['img_url'] = indiv_hemisphere_soup.select_one("div.downloads ul li a").get('href')
+
+        # Get Hemisphere url
+        hemisphere_dict['url'] = image_url
         
         # Append hemisphere object to list
         hemisphere_urls.append(hemisphere_dict)
