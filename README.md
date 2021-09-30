@@ -6,16 +6,16 @@ Build a web application to scrape various websites for data related to Mars and 
 ### Step 1 : Web scraping
 Utilizing Jupyter Notebook, we will scrape the following websites:
 
-<b>NASA Mars News</b>
+<b>NASA Mars News</b><br>
 Collect the latest news title and paragraph text.
 
-<B>JPL Mars Space Images - Featured Image</b>
+<B>JPL Mars Space Images - Featured Image</b><br>
 Use splinter to navigate the site and find the image URL to the current featured Mars image.
 
-<b>Mars Facts</b>
+<b>Mars Facts</b><br>
 Visit the Mars Facts webpage and scrape the table containing facts about the planet.
 
-<b>Mars Hemisphere</b>
+<b>Mars Hemisphere</b><br>
 Visit the Astrogeology site to obtain high res images for each of Mar's hemispheres.
 
 ### Step 2 : MongoDB and Flask application
