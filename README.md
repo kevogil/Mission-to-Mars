@@ -1,9 +1,9 @@
-Mission to Mars
+## Mission to Mars
 
-Objective
+### Objective
 Build a web application to scrape various websites for data related to Mars and display the information in a single HTML page.
 
-Step 1 : Web scraping
+### Step 1 : Web scraping
 Utilizing Jupyter Notebook, we will scrape the following websites:
 
 NASA Mars News
@@ -18,4 +18,4 @@ Visit the Mars Facts webpage and scrape the table containing facts about the pla
 Mars Hemisphere
 Visit the Astrogeology site to obtain high res images for each of Mar's hemispheres.
 
-Step 2 : MongoDB and Flask application
+### Step 2 : MongoDB and Flask application
