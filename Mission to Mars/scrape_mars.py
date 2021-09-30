@@ -1,6 +1,5 @@
 # Import Splinter, BeautifulSoup, and Pandas
 import pandas as pd
-import datetime as dt
 from splinter import Browser
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup as bs
@@ -20,8 +19,7 @@ def scrape():
         "news_paragraph": news_paragraph,
         "featured_image": jpl_featured_image(browser),
         "facts": mars_facts(),
-        "hemispheres": hemispheres(browser),
-        "last_modified": dt.datetime.now()
+        "hemispheres": hemispheres(browser)
     }
 
     # Stop webdriver and return data
@@ -40,19 +38,16 @@ def mars_news(browser):
     html = browser.html
     soup = bs(html, "html.parser")
 
-    # Print soup
-    print(soup.prettify)
-
     # Extract all li items
     lists = soup.find_all('li', class_='slide')
 
     # .find() the content title and save it as `news_title`
     news_title = lists[0].find('div', class_='content_title').text
-    print(news_title)
+    print(f"NASA Mars News: {news_title}")
 
     # .find() the paragraph text
     news_paragraph = lists[0].find('div', class_='article_teaser_body').text
-    print(news_paragraph)
+    print(f"NASA Mars News: {news_paragraph}")
 
     return news_title, news_paragraph
 
@@ -108,7 +103,6 @@ def hemispheres(browser):
 
     # First, get a list of all of the hemispheres
     hemispheres_soup = soup.find_all('div', class_='description')
-    print(hemispheres_soup)
 
     hemisphere_dict = {}
     hemisphere_urls = []

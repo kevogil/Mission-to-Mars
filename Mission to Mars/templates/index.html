@@ -25,17 +25,10 @@
     <div class="container">
         <div class="jumbotron text-center" style="background-image: url(https://cdn1.edgedatg.com/aws/v2/natgeotv/Mars/showimages/a07a09aa9b0a2ff2b8416d3c9f3ef50a/1200x676-Q75_a07a09aa9b0a2ff2b8416d3c9f3ef50a.jpg); background-size: 100%; height: 400px;">
             <h1 style="color: rgb(250, 218, 150)">Mission to</h1>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+            <br><br><br><br><br><br><br><br><br>
             <a class="btn btn-lg text-white" style="background-color:teal; color: white" href="/scrape" role="button">Scrape New Data</a>
         </div>
+
         <!-- row containing latest mars news and hemisphere info -->
         <div class="row">
           <!-- latest mars news -->
@@ -45,6 +38,8 @@
             <h4><p>{{mars.news_paragraph}}</p></h4>
           </div>
         </div>
+        <br><br>
+
         <!-- row containing featured image and mars facts table -->
         <div class="row">
           <!-- featured image -->
@@ -57,6 +52,15 @@
             <h2><b>Mars Facts</b></h2>
             <div class="col-md-12">{{mars.mars_profile_df | safe}}
             </div>
+          </div>
+        </div>
+        <br><br><br><br>
+
+        <!-- mars hemispheres -->
+        <div class="row">
+          <div class="col text-center">
+            <h2><b>Mars Hemispheres</b></h2>
+            <hr>
           </div>
         </div>
 

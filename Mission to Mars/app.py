@@ -14,7 +14,7 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
     # Retrieve data
-    mars = mongo.db.mars
+    mars = mongo.db.mars.find_one()
     return render_template("index.html", mars=mars)
 
 # Create a '/scrape' route that will create the mars collection, run your scrape() function from scrape_mars, and update the mars collection in the database
