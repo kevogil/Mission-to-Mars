@@ -15,7 +15,7 @@ def scrape():
     news_title, news_paragraph = mars_news(browser)
 
     # Run all scraping functions and store results in a dictionary
-    dict = {
+    data_dict = {
         "news_title": news_title,
         "news_paragraph": news_paragraph,
         "featured_image": jpl_featured_image(browser),
@@ -26,7 +26,7 @@ def scrape():
 
     # Stop webdriver and return data
     browser.quit()
-    return dict
+    return data_dict
 
 
 
